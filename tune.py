@@ -132,6 +132,12 @@ while True:
     
   if kegman.conf['liveParams'] != "1" and kegman.conf['liveParams'] != "0":
     kegman.conf['liveParams'] = "1"
+    
+  if float(kegman.conf['steerRatio']) < 1 and float(kegman.conf['steerRatio']) != -1:
+    kegman.conf['steerRatio'] = "1"
+    
+  if float(kegman.conf['steerRateCost']) < 0.01 and float(kegman.conf['steerRateCost']) != -1:
+    kegman.conf['steerRateCost'] = "0.01"  
 
 
   if write_json:
