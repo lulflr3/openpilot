@@ -77,7 +77,7 @@ class LatControl(object):
                             (CP.steerKiBP, self.steerKiV),
                             k_f=CP.steerKf, pos_limit=1.0)
         self.steerRatio = float(kegman.conf['steerRatio'])
-        self.steerRateCost = float(kegman.conf['steerRateCost']
+        self.steerRateCost = float(kegman.conf['steerRateCost'])
         if self.steerRateCost != self.steerRateCost_prev:
           self.setup_mpc(self.steerRateCost)
           self.steerRateCost_prev = self.steerRateCost
