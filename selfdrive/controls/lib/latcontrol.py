@@ -36,6 +36,8 @@ class LatControl(object):
     else:
       self.steerRatio = CP.steerRatio
       self.steerRateCost = CP.steerRateCost
+    
+    self.steerRateCost_prev = self.steerRateCost
 
     self.last_cloudlog_t = 0.0
     self.setup_mpc(self.steerRateCost)
@@ -75,8 +77,11 @@ class LatControl(object):
                             (CP.steerKiBP, self.steerKiV),
                             k_f=CP.steerKf, pos_limit=1.0)
         self.steerRatio = float(kegman.conf['steerRatio'])
-        self.steerRateCost = float(kegman.conf['steerRateCost'])
-
+        self.steerRateCost = float(kegman.conf['steerRateCost']
+        if self.steerRateCost != self.steerRateCost_prev:
+          self.setup_mpc(self.steerRateCost)
+          self.steerRateCost_prev = self.steerRateCost
+         
       self.mpc_frame = 0  
 
   def update(self, active, v_ego, angle_steers, steer_override, d_poly, angle_offset, CP, VM, PL):
