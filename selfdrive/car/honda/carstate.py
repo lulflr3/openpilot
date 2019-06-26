@@ -109,7 +109,7 @@ def get_can_signals(CP):
     checks += [("EPB_STATUS", 50)]
   elif CP.carFingerprint == CAR.PILOT:
     signals += [("MAIN_ON", "SCM_BUTTONS", 0),
-                ("CAR_GAS", "GAS_PEDAL_2", 0)]""""
+                ("CAR_GAS", "GAS_PEDAL_2", 0)]"""
 
   # add gas interceptor reading if we are using it
   if CP.enableGasInterceptor:
