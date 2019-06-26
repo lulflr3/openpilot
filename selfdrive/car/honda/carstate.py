@@ -241,7 +241,6 @@ class CarState(object):
     self.left_blinker_on = 0
     self.right_blinker_on = 0
     self.brake_hold = 0
-	self.park_brake = 0
     self.main_on = cp.vl["MACCHINA"]['MAIN_ON']
     
     can_gear_shifter = int(cp.vl["MACCHINA"]['GEAR_SHIFTER'])
