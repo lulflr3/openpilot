@@ -499,7 +499,7 @@ class CarInterface(object):
       if self.cam_can_invalid_count >= 100 and self.CS.CP.carFingerprint not in HONDA_BOSCH:
         events.append(create_event('invalidGiraffeHonda', [ET.NO_ENTRY, ET.IMMEDIATE_DISABLE, ET.PERMANENT]))
     else:
-      self.cam_can_invalid_count = 0""""
+      self.cam_can_invalid_count = 0"""
 
     if not self.CS.lkMode:
       events.append(create_event('manualSteeringRequired', [ET.WARNING]))
@@ -510,7 +510,7 @@ class CarInterface(object):
     # disable on pedals rising edge or when brake is pressed and speed isn't zero
     """if (ret.gasPressed and not self.gas_pressed_prev) or \
        (ret.brakePressed and (not self.brake_pressed_prev or ret.vEgo > 0.001)):
-      events.append(create_event('pedalPressed', [ET.NO_ENTRY, ET.USER_DISABLE]))""""
+      events.append(create_event('pedalPressed', [ET.NO_ENTRY, ET.USER_DISABLE]))"""
 
     if ret.gasPressed:
       events.append(create_event('pedalPressed', [ET.PRE_ENABLE]))
