@@ -295,13 +295,15 @@ class CarState(object):
         self.kegman.write_config(self.kegman.conf) 
         
     # when user presses LKAS button on steering wheel
-    if self.cruise_setting == 1:
+    """if self.cruise_setting == 1:
       if cp.vl["MACCHINA"]["CRUISE_SETTING"] == 0:
         if self.lkMode:
           self.lkMode = False
         else:
-          self.lkMode = True
-          
+          self.lkMode = True"""
+    
+	self.lkMode = True
+
     self.prev_cruise_setting = self.cruise_setting
     self.cruise_setting = cp.vl["MACCHINA"]['CRUISE_SETTING']
     self.read_distance_lines = self.trMode + 1

@@ -7,6 +7,6 @@
     "\\selfdrive\\car\\honda",
     "\\selfdrive\\controls"
   ],
-  "SelectedNode": "\\opendbc\\honda_Clio_IV_2018_can_generated.dbc",
+  "SelectedNode": "\\selfdrive\\car\\honda\\interface.py",
   "PreviewInSolutionExplorer": false
 }
