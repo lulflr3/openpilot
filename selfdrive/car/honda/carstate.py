@@ -302,10 +302,7 @@ class CarState(object):
         else:
           self.lkMode = True"""
     
-	if self.lkMode == False:
-	  self.lkMode = True
-
-    self.prev_cruise_setting = self.cruise_setting
+	self.prev_cruise_setting = self.cruise_setting
     self.cruise_setting = cp.vl["MACCHINA"]['CRUISE_SETTING']
     self.read_distance_lines = self.trMode + 1
       
