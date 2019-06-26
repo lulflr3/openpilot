@@ -302,7 +302,8 @@ class CarState(object):
         else:
           self.lkMode = True"""
     
-	self.lkMode = True
+	if self.lkMode == False
+	  self.lkMode = True
 
     self.prev_cruise_setting = self.cruise_setting
     self.cruise_setting = cp.vl["MACCHINA"]['CRUISE_SETTING']
