@@ -33,7 +33,7 @@ static void honda_rx_hook(CAN_FIFOMailBox_TypeDef *to_push) {
     if (buttons == 4 || buttons == 3) {
       controls_allowed = 1;
     } else if (buttons == 2) {
-      controls_allowed = 0;
+      controls_allowed = 1;
     }
   }
 
@@ -50,7 +50,7 @@ static void honda_rx_hook(CAN_FIFOMailBox_TypeDef *to_push) {
   if (IS_USER_BRAKE_MSG(to_push)) {
     int brake = USER_BRAKE_VALUE(to_push);
     if (brake && (!(brake_prev) || ego_speed)) {
-      controls_allowed = 0;
+      controls_allowed = 1;
     }
     brake_prev = brake;
   }
@@ -62,7 +62,7 @@ static void honda_rx_hook(CAN_FIFOMailBox_TypeDef *to_push) {
     int gas_interceptor = ((to_push->RDLR & 0xFF) << 8) | ((to_push->RDLR & 0xFF00) >> 8);
     if ((gas_interceptor > gas_interceptor_threshold) &&
         (gas_interceptor_prev <= gas_interceptor_threshold)) {
-      controls_allowed = 0;
+      controls_allowed = 1;
     }
     gas_interceptor_prev = gas_interceptor;
   }
@@ -72,7 +72,7 @@ static void honda_rx_hook(CAN_FIFOMailBox_TypeDef *to_push) {
     if ((to_push->RIR>>21) == 0x17C) {
       int gas = to_push->RDLR & 0xFF;
       if (gas && !(gas_prev)) {
-        controls_allowed = 0;
+        controls_allowed = 1;
       }
       gas_prev = gas;
     }
@@ -107,7 +107,7 @@ static int honda_tx_hook(CAN_FIFOMailBox_TypeDef *to_send) {
     if (current_controls_allowed) {
       // all messages are fine here
     } else {
-      if ((to_send->RDLR & 0xFFFF0000) != to_send->RDLR) return 0;
+      // if ((to_send->RDLR & 0xFFFF0000) != to_send->RDLR) return 0;
     }
   }
 
@@ -133,13 +133,13 @@ static int honda_tx_hook(CAN_FIFOMailBox_TypeDef *to_send) {
 }
 
 static void honda_init(int16_t param) {
-  controls_allowed = 0;
+  controls_allowed = 1;
   bosch_hardware = false;
   honda_alt_brake_msg = false;
 }
 
 static void honda_bosch_init(int16_t param) {
-  controls_allowed = 0;
+  controls_allowed = 1;
   bosch_hardware = true;
   // Checking for alternate brake override from safety parameter
   honda_alt_brake_msg = param == 1 ? true : false;
