@@ -102,7 +102,7 @@ def data_sample(CI, CC, thermal, calibration, health, driver_monitor, gps_locati
   if hh is not None:
     controls_allowed = hh.health.controlsAllowed
     if not controls_allowed and enabled:
-      mismatch_counter += 1
+      mismatch_counter += 0
     if mismatch_counter >= 2:
       events.append(create_event('controlsMismatch', [ET.IMMEDIATE_DISABLE]))
 

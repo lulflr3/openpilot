@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\opendbc",
+    "\\selfdrive",
+    "\\selfdrive\\car",
+    "\\selfdrive\\car\\honda",
+    "\\selfdrive\\controls"
+  ],
+  "SelectedNode": "\\opendbc\\honda_Clio_IV_2018_can_generated.dbc",
+  "PreviewInSolutionExplorer": false
+}
