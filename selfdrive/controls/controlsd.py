@@ -47,7 +47,7 @@ def data_sample(CI, CC, thermal, calibration, health, driver_monitor, gps_locati
   # Update carstate from CAN and create events
   CS = CI.update(CC)
   events = list(CS.events)
-  enabled = isEnabled(state)
+  enabled = True
 
   # Receive from sockets
   td = None
@@ -423,10 +423,7 @@ def controlsd_thread(gctx=None, rate=100, default_bias=0.):
   passive = False
 
   # No sendcan if passive
-  if not passive:
-    sendcan = messaging.pub_sock(context, service_list['sendcan'].port)
-  else:
-    sendcan = None
+  sendcan = messaging.pub_sock(context, service_list['sendcan'].port)
 
   # Sub sockets
   poller = zmq.Poller()
@@ -444,9 +441,6 @@ def controlsd_thread(gctx=None, rate=100, default_bias=0.):
     raise Exception("unsupported car")
 
   # if stock camera is connected, then force passive behavior
-  if not CP.enableCamera:
-    passive = True
-    sendcan = None
 
   if passive:
     CP.safetyModel = car.CarParams.SafetyModels.noOutput
