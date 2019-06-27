@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\cereal",
     "\\opendbc",
     "\\selfdrive",
     "\\selfdrive\\car",
     "\\selfdrive\\car\\honda",
     "\\selfdrive\\controls"
   ],
-  "SelectedNode": "\\selfdrive\\car\\honda\\interface.py",
+  "SelectedNode": "\\selfdrive\\car\\honda\\hondacan.py",
   "PreviewInSolutionExplorer": false
 }
