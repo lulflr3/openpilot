@@ -426,7 +426,7 @@ class CarInterface(object):
     ret.cruiseState.standstill = False
     
     ret.readdistancelines = self.CS.read_distance_lines
-    ret.lkMode = self.CS.lkMode
+    ret.lkMode = True
 
     # TODO: button presses
     buttonEvents = []

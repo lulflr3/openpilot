@@ -157,8 +157,8 @@ class CarController(object):
     # steer torque is converted back to CAN reference (positive when steering right)
     apply_gas = clip(actuators.gas, 0., 1.)
     apply_brake = int(clip(self.brake_last * BRAKE_MAX, 0, BRAKE_MAX - 1))
-    apply_steer = int(-actuators.steer * STEER_MAX) #int(clip(-actuators.steer * STEER_MAX, -STEER_MAX, STEER_MAX))
-    angle_des = 30000 + int(actuators.steerAngle * 10.)
+    apply_steer = abs(int(-actuators.steer * STEER_MAX)) #int(clip(-actuators.steer * STEER_MAX, -STEER_MAX, STEER_MAX))
+    angle_des = 4000 + int(actuators.steerAngle * 10.)
 
     lkas_active = enabled and not CS.steer_not_allowed and CS.lkMode # and not CS.left_blinker_on and not CS.right_blinker_on  # add LKAS button to toggle steering
 
