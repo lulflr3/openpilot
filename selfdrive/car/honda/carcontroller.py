@@ -168,7 +168,7 @@ class CarController(object):
     # Send steering command.
     idx = frame % 4
     can_sends.append(hondacan.create_steering_control(self.packer, apply_steer, angle_des,
-      lkas_active, CS.steer_not_allowed, CS.lkMode, CS.CP.carFingerprint, idx))
+      lkas_active, enabled, CS.lkMode, CS.CP.carFingerprint, idx))
    
     """# Send dashboard UI commands.
     if (frame % 10) == 0:

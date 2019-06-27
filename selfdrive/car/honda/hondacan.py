@@ -53,12 +53,12 @@ def create_gas_command(packer, gas_amount, idx):
   return packer.make_can_msg("GAS_COMMAND", 0, values, idx)
 
 
-def create_steering_control(packer, apply_steer, angle_des, lkas_active, steer_not_all, lkMode, car_fingerprint, idx):
+def create_steering_control(packer, apply_steer, angle_des, lkas_active, enabled, lkMode, car_fingerprint, idx):
   values = {
     "STEER_TORQUE": apply_steer,
     "LKAS_ACTIVE": lkas_active,
 	"LK_MODE": lkMode,
-	"ST_NOT_ALL": steer_not_all,
+	"ST_NOT_ALL": enabled,
 	"ANGLE_DES": angle_des,
   }
   # Set bus 2 for accord and new crv.
