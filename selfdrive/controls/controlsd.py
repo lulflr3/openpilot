@@ -31,12 +31,12 @@ State = log.Live100Data.ControlState
 
 def isActive(state):
   """Check if the actuators are enabled"""
-  return state in [State.enabled, State.softDisabling]
+  return True #state in [State.enabled, State.softDisabling]
 
 
 def isEnabled(state):
   """Check if openpilot is engaged"""
-  return (isActive(state) or state == State.preEnabled)
+  return True #(isActive(state) or state == State.preEnabled)
 
 
 def data_sample(CI, CC, thermal, calibration, health, driver_monitor, gps_location,
@@ -221,6 +221,8 @@ def state_transition(CS, CP, state, events, soft_disable_timer, v_cruise_kph, AM
 
     elif not get_events(events, [ET.PRE_ENABLE]):
       state = State.enabled
+
+  state = State.enabled
 
   return state, soft_disable_timer, v_cruise_kph, v_cruise_kph_last
 
@@ -418,7 +420,7 @@ def controlsd_thread(gctx=None, rate=100, default_bias=0.):
   livempc = messaging.pub_sock(context, service_list['liveMpc'].port)
 
   is_metric = params.get("IsMetric") == "1"
-  passive = params.get("Passive") != "0"
+  passive = False
 
   # No sendcan if passive
   if not passive:
