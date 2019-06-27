@@ -233,8 +233,8 @@ def state_control(plan, CS, CP, state, events, v_cruise_kph, v_cruise_kph_last, 
 
   actuators = car.CarControl.Actuators.new_message()
 
-  enabled = isEnabled(state)
-  active = isActive(state)
+  enabled = True
+  active = True
 
   # check if user has interacted with the car
   driver_engaged = len(CS.buttonEvents) > 0 or \
@@ -250,9 +250,9 @@ def state_control(plan, CS, CP, state, events, v_cruise_kph, v_cruise_kph_last, 
 
   # State specific actions
 
-  if state in [State.preEnabled, State.disabled]:
-    LaC.reset()
-    LoC.reset(v_pid=CS.vEgo)
+  #if state in [State.preEnabled, State.disabled]:
+  #  LaC.reset()
+  #  LoC.reset(v_pid=CS.vEgo)
 
   elif state in [State.enabled, State.softDisabling]:
     # parse warnings from car specific interface
