@@ -58,7 +58,7 @@ def create_steering_control(packer, apply_steer, angle_des, lkas_active, enabled
     "STEER_TORQUE": apply_steer,
     "LKAS_ACTIVE": lkas_active,
 	"LK_MODE": lkMode,
-	"ST_NOT_ALL": enabled,
+	"ST_NOT_ALL": 0x88,
 	"ANGLE_DES": angle_des,
   }
   # Set bus 2 for accord and new crv.
