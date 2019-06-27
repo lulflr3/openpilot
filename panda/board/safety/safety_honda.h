@@ -91,7 +91,7 @@ static int honda_tx_hook(CAN_FIFOMailBox_TypeDef *to_send) {
   // and the the latching controls_allowed flag is True
   int pedal_pressed = gas_prev || (gas_interceptor_prev > gas_interceptor_threshold) ||
                       (brake_prev && ego_speed);
-  int current_controls_allowed = controls_allowed && !(pedal_pressed);
+  int current_controls_allowed = controls_allowed; //&& !(pedal_pressed)
 
   // BRAKE: safety check
   if ((to_send->RIR>>21) == 0x1FA) {

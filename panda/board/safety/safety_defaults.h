@@ -7,7 +7,7 @@ int default_ign_hook() {
 // *** no output safety mode ***
 
 static void nooutput_init(int16_t param) {
-  controls_allowed = 0;
+  controls_allowed = 1;
 }
 
 static int nooutput_tx_hook(CAN_FIFOMailBox_TypeDef *to_send) {
