@@ -129,7 +129,7 @@ ALERTS = [
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.none, .0, .1, .1, alert_rate=0.75),
  
-  Alert(
+  """Alert(
       "promptDriverDistracted",
       "KEEP EYES ON ROAD",
       "User Appears Distracted",
@@ -177,7 +177,7 @@ ALERTS = [
       "Accuracy Is High",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 4.),
-
+"""
   Alert(
       "geofence",
       "DISENGAGEMENT REQUIRED",
