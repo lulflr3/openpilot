@@ -82,10 +82,10 @@ ALERTS = [
 
   Alert(
       "steerSaturated",
-      "TAKE CONTROL",
+      "",
       "Turn Exceeds Steering Limit",
-      AlertStatus.userPrompt, AlertSize.mid,
-      Priority.LOW, VisualAlert.steerRequired, AudibleAlert.chimePrompt, 1., 2., 3.),
+      AlertStatus.userPrompt, AlertSize.small,
+      Priority.LOW, VisualAlert.none, AudibleAlert.chimePrompt, 1., 2., 3.),
 
   Alert(
       "steerTempUnavailable",
@@ -129,7 +129,7 @@ ALERTS = [
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.none, .0, .1, .1, alert_rate=0.75),
 
-  Alert(
+  """Alert(
       "promptDriverDistracted",
       "KEEP EYES ON ROAD",
       "User Appears Distracted",
@@ -162,7 +162,7 @@ ALERTS = [
       "DISENGAGE IMMEDIATELY",
       "User Was Unresponsive",
       AlertStatus.critical, AlertSize.full,
-      Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),
+      Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),"""
 
   Alert(
       "driverMonitorOff",

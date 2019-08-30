@@ -125,7 +125,7 @@ class DriverStatus():
       self.awareness = max(self.awareness - self.step_change, -0.1)
 
     alert = None
-    if self.awareness <= 0.:
+    """if self.awareness <= 0.:
       # terminal red alert: disengagement required
       alert = 'driverDistracted' if self.monitor_on else 'driverUnresponsive'
     elif self.awareness <= self.threshold_prompt:
@@ -135,7 +135,7 @@ class DriverStatus():
       # pre green alert
       alert = 'preDriverDistracted' if self.monitor_on else 'preDriverUnresponsive'
     if alert is not None:
-      events.append(create_event(alert, [ET.WARNING]))
+      events.append(create_event(alert, [ET.WARNING]))"""
 
     return events
 
