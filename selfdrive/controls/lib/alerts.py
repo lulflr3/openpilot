@@ -129,8 +129,8 @@ ALERTS = [
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.none, .0, .1, .1, alert_rate=0.75),
  
-  """Alert(
-      "promptDriverDistracted",
+  #Alert(
+      """"promptDriverDistracted",
       "KEEP EYES ON ROAD",
       "User Appears Distracted",
       AlertStatus.userPrompt, AlertSize.mid,
@@ -161,8 +161,8 @@ ALERTS = [
       "driverUnresponsive",
       "DISENGAGE IMMEDIATELY",
       "User Was Unresponsive",
-      AlertStatus.critical, AlertSize.full,
-      Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),
+      AlertStatus.critical, AlertSize.full,"""
+  #    Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),
 
   Alert(
       "driverMonitorOff",
@@ -176,7 +176,7 @@ ALERTS = [
       "DRIVER MONITOR IS AVAILABLE",
       "Accuracy Is High",
       AlertStatus.normal, AlertSize.mid,
-      Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 4.),"""
+      Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 4.),
 
   Alert(
       "geofence",
