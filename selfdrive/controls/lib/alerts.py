@@ -163,7 +163,6 @@ ALERTS = [
       "User Was Unresponsive",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),"""
-
   Alert(
       "driverMonitorOff",
       "DRIVER MONITOR IS UNAVAILABLE",
