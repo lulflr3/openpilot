@@ -199,7 +199,7 @@ class CarInterface(object):
 
 	  # KpV et KiV parametre du PID default [[0.8], [0.24]]
 
-      ret.steerKpV, ret.steerKiV = [[0.4], [0.06]]
+      ret.steerKpV, ret.steerKiV = [[0.25], [0.12]]
       
       ret.longitudinalKpBP = [0., 5., 35.]
       ret.longitudinalKpV = [3.6, 2.4, 1.5]
