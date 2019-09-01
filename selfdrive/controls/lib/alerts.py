@@ -82,7 +82,7 @@ ALERTS = [
 
   Alert(
       "steerSaturated",
-      "",
+      "Saturation volant",
       "Turn Exceeds Steering Limit",
       AlertStatus.userPrompt, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.chimePrompt, 1., 2., 3.),
@@ -501,7 +501,7 @@ ALERTS = [
   Alert(
       "modelCommIssueNoEntry",
       "openpilot Unavailable",
-      "Model Error: Check Internet Connection",
+      "Initialisation...",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
