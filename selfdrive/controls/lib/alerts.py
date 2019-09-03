@@ -152,8 +152,8 @@ ALERTS = [
 
   Alert(
       "startup",
-      "Be ready to take over at any time",
-      "Always keep hands on wheel and eyes on road",
+      "Soyez prêt à reprendre le volant à tout moment !",
+      "Gardez toujours les yeux sur la route",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., 15.),
 
@@ -337,8 +337,8 @@ ALERTS = [
 
   Alert(
       "modelCommIssue",
-      "TAKE CONTROL IMMEDIATELY",
-      "Model Error: Check Internet Connection",
+      "INITIALISATION",
+      "en cours...",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
