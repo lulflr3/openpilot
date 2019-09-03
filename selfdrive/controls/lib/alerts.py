@@ -82,7 +82,7 @@ ALERTS = [
 
   Alert(
       "steerSaturated",
-      "Saturation volant",
+      "Couple Max",
       "Turn Exceeds Steering Limit",
       AlertStatus.userPrompt, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.chimePrompt, 1., 2., 3.),
