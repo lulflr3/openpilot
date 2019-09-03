@@ -152,7 +152,7 @@ ALERTS = [
 
   Alert(
       "startup",
-      "Soyez prêt à reprendre le volant à tout moment !",
+      "Soyez pret a reprendre le volant a tout moment !",
       "Gardez toujours les yeux sur la route",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., 15.),
